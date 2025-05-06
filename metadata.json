@@ -1,0 +1,11 @@
+{
+    "summary": {
+        "en-US": "Automatically adds a newly created tab to a group, if the previously focused tab was in a group."
+    },
+    "categories": [
+        "tabs"
+    ],
+    "version": {
+        "license": "GPL-3.0-only"
+    }
+}

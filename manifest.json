@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Advanced New Tab",
+  "description": "Automatically adds a newly created tab to a group, if the previously focused tab was in a group.",
+  "version": "1.1.1",
+  "permissions": [
+    "storage"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "advanced-new-tab-f.signorini@elsyco.it"
+    }
+  }
+}
