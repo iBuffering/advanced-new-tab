@@ -7,5 +7,8 @@
     ],
     "version": {
         "license": "GPL-3.0-only"
+    },
+    "description": {
+        "en-US": "**Planned Features**\n\nI am working on an action button for the tab bar that should be used in place of the standard \"+\" button. This button will add a new tab outside of any group, essentially bypassing this extension.\n\n**Changelog**\n\n_Version 1.2.1 (2025-07-15)_\n- Added command \"newTabIgnoreGroup\" with default keyboard shortcut \"Ctrl+Alt+T\"; it will create a new tab outside any group"
     }
 }

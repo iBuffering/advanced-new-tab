@@ -1,7 +1,50 @@
+/**
+ * Sets the previosTab ID.
+ *
+ * If `id` is null, the key will be removed.
+ *
+ * @param {number|null} id
+ */
+async function setPreviousTabID(id) {
+    if (id === null) {
+        await browser.storage.local.remove('previousTabId');
+    } else {
+        await browser.storage.local.set({ 'previousTabId': id });
+    }
+}
+
+/**
+ * Returns the previous tab's ID, or null.
+ * @returns {Promise<number|null>}
+ */
+async function getPreviousTabID() {
+    const { previousTabId } = (await browser.storage.local.get('previousTabId'))
+    if (previousTabId) {
+        return parseInt(previousTabId);
+    }
+    return null;
+}
+
+async function createNewTabIgnoreGroup() {
+    await setPreviousTabID(null);
+    await browser.tabs.create({ active: true });
+}
+
+// Every time the active tab changes, the tab's ID gets stored.
 browser.tabs.onActivated.addListener(async (activeInfo) => {
     setTimeout(async () => {
-        browser.storage.local.set({ 'previousTabId': activeInfo.tabId });
+        await setPreviousTabID(activeInfo.tabId);
     }, 100);
+});
+
+browser.action.onClicked.addListener(async () => {
+    await createNewTabIgnoreGroup();
+});
+
+browser.commands.onCommand.addListener(async (commandName) => {
+    if (commandName == 'newTabIgnoreGroup') {
+        await createNewTabIgnoreGroup();
+    }
 });
 
 browser.tabs.onCreated.addListener(async (tab) => {

@@ -4,10 +4,18 @@
   "author": "Filippo Signorini",
   "homepage_url": "https://github.com/iBuffering/advanced-new-tab",
   "description": "Automatically adds a newly created tab to a group, if the previously focused tab was in a group.",
-  "version": "1.1.2",
+  "version": "1.2.1",
   "permissions": [
     "storage"
   ],
+  "commands": {
+    "newTabIgnoreGroup": {
+      "suggested_key": {
+        "default": "Ctrl+Alt+T"
+      },
+      "description": "Creates a new tab ignoring the previously active group."
+    }
+  },
   "background": {
     "scripts": [
       "background.js"
