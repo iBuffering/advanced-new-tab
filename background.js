@@ -37,9 +37,9 @@ browser.tabs.onActivated.addListener(async (activeInfo) => {
     }, 100);
 });
 
-browser.action.onClicked.addListener(async () => {
-    await createNewTabIgnoreGroup();
-});
+// browser.action.onClicked.addListener(async () => {
+//     await createNewTabIgnoreGroup();
+// });
 
 browser.commands.onCommand.addListener(async (commandName) => {
     if (commandName == 'newTabIgnoreGroup') {

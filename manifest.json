@@ -4,7 +4,7 @@
   "author": "Filippo Signorini",
   "homepage_url": "https://github.com/iBuffering/advanced-new-tab",
   "description": "Automatically adds a newly created tab to a group, if the previously focused tab was in a group.",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "permissions": [
     "storage"
   ],
